@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Deva Sriramoju</title>
   <link rel="stylesheet" href="style.css">
@@ -33,8 +34,8 @@
       <p>📞 +1 (469)-937-2434)</p>
 
       <div class="buttons">
-        <button>Share</button>
-        <button>Email</button>
+        <button onclick="shareContent()">Share</button>
+       <button>Email</button>
       </div>
     </section>
 
@@ -73,8 +74,40 @@
 
     
     <h2>Education</h2>
-    <p class="intro">High school Freshman @Richland High School, Prosper, TX</p>
-
+    <br>
+    <table class="educationtable">
+  <thead>
+    <tr class="tabledata">
+      <th class="tabledata">Grade</th>
+      <th class="tabledata">Year</th>
+      <th class="tabledata">School</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="tabledata">
+      <td class="tabledata">IX</td>
+      <td class="tabledata">2025-26</td>
+      <td class="tabledata">Richland high school, Prosper, TX, USA</td>
+    </tr>
+    <tr class="tabledata">
+      <td class="tabledata">VIII</td>
+      <td class="tabledata">2024-25</td>
+      <td class="tabledata">Akshara school, Nalgonda, TS, IND</td>
+    </tr>
+    <tr class="tabledata">
+      <td class="tabledata">VII</td>
+      <td class="tabledata">2023-24</td>
+      <td class="tabledata">Williams Rushing Middle School, Prosper, TX, USA</td>
+    </tr>
+     <tr class="tabledata">
+      <td class="tabledata">VI</td>
+      <td class="tabledata">2022-23</td>
+      <td class="tabledata">Williams Rushing Middle School, Prosper, TX, USA</td>
+    </tr>
+    
+    
+  </tbody>
+</table>
     <h2>Skills</h2>
     <ul>
       <li class="intro">HTML</li>
@@ -88,9 +121,28 @@
   </section>
 
 </div>
+<script>
+  function shareContent() {
+    if (navigator.share) {
+      navigator.share({
+        title: document.title,
+        text: 'Check this out!',
+        url: window.location.href
+      });
+    } else {
+      alert('Native share not supported');
+    }
+  }
+  function openShare() {
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent("Check this out!");
+
+    window.open(
+      `https://wa.me/?text=${text} ${url}`,
+      '_blank'
+    );
+  }
+</script>
 
 </body>
 </html>
-
-
-
