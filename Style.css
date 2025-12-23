@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #eaf0ff;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 220px 350px 1fr;
+  height: 100vh;
+  margin: 20px;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  background: #5a3bdb;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar a {
+  display: block;
+  color: #5a3bdb;
+  text-decoration: none;
+  margin: 20px 0;
+}
+
+/* Main */
+.main {
+  padding: 20px;
+  background: #f8f9ff;
+}
+
+.profile-card {
+  text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.profile-card img {
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.buttons button {
+  margin: 5px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #5a3bdb;
+  color: white;
+  cursor: pointer;
+}
+
+/* Stats */
+.stats {
+  margin-top: 20px;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.progress {
+  background: #ddd;
+  height: 8px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.progress div {
+  height: 100%;
+  background: #3ad1b0;
+  border-radius: 10px;
+}
+
+.orange div { background: orange; }
+.red div { background: red; }
+
+/* Resume */
+.resume {
+  padding: 30px;
+}
+
+.resume h2 {
+  margin-top: 20px;
+}
+
+.download {
+  float: right;
+  padding: 8px 15px;
+  background: #5a3bdb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+
+.intro {
+    font-family: "Times New Roman", serif;
+}
