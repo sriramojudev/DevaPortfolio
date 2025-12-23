@@ -61,7 +61,7 @@ body {
   padding: 8px 12px;
   border: none;
   border-radius: 8px;
-  background: #5a3bdb;
+  background: white;
   color: white;
   cursor: pointer;
 }
@@ -130,6 +130,20 @@ body {
   background-color: #dddddd;
 }
 
+.icon-button {
+    font-size: 35px;
+    color: #5a3bdb;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: transform 0.2s, color 0.3s;
+  }
+  
+  .icon-button:hover { transform: scale(1.2); }
+  .icon-button.email { color: #FF5733; }
+  .icon-button.instagram { color: #E1306C; }
+  .icon-button.share { color: #1DA1F2; }
+  .icon-button.download { color: #28a745; }
+
 /* ===== RESPONSIVE MEDIA QUERIES ===== */
 
 /* Mobile screens only (<=768px) */
@@ -168,5 +182,18 @@ body {
     display: block;
     overflow-x: auto;
   }
-}
 
+  .icon-button {
+    font-size: 28px;
+    color: #5a3bdb;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: transform 0.2s, color 0.3s;
+  }
+
+  .icon-button:hover { transform: scale(1.2); }
+  .icon-button.email { color: #FF5733; }
+  .icon-button.instagram { color: #E1306C; }
+  .icon-button.share { color: #1DA1F2; }
+  .icon-button.download { color: #28a745; }
+}
