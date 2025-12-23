@@ -8,7 +8,7 @@
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
+<body id="pageContent">
 
 <div class="container">
 
@@ -29,13 +29,15 @@
     <!-- Profile Card -->
     <section class="profile-card">
       <img src="profile.jpg" alt="Profile">
-      <h2>Deva Sriramoju ⭐⭐⭐⭐</h2>
+      <h2>Deva Sriramoju <br>⭐⭐⭐⭐</h2>
       <p>sriramojudev@gmail.com</p>
       <p>📞 +1 (469)-937-2434)</p>
 
       <div class="buttons">
         <button onclick="shareContent()">Share</button>
-       <button>Email</button>
+       <a href="mailto:sriramojudev@gmail.com?subject=Hello&body=How are you?">
+  <button>Email</button>
+</a>
       </div>
     </section>
 
@@ -121,6 +123,8 @@
   </section>
 
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
   function shareContent() {
     if (navigator.share) {
@@ -142,6 +146,26 @@
       '_blank'
     );
   }
+
+  function downloadPDF() {
+  const { jsPDF } = window.jspdf;
+  const content = document.getElementById('pageContent');
+
+  // Capture only the container with local images
+  html2canvas(content, { scale: 2 }).then(canvas => {
+    const imgData = canvas.toDataURL('image/png');
+    const pdf = new jsPDF('p', 'mm', 'a4');
+    const imgProps = pdf.getImageProperties(imgData);
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+    pdf.save('portfolio.pdf');
+  });
+}
+
+
+ 
 </script>
 
 </body>
