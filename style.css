@@ -1,3 +1,4 @@
+/* ===== BASE STYLES ===== */
 * {
   margin: 0;
   padding: 0;
@@ -9,9 +10,10 @@ body {
   background: #eaf0ff;
 }
 
+/* ===== CONTAINER GRID (desktop original) ===== */
 .container {
   display: grid;
-  grid-template-columns: 220px 350px 1fr;
+  grid-template-columns: 220px 350px 1fr; /* Original layout */
   height: 100vh;
   margin: 20px;
   background: white;
@@ -19,7 +21,7 @@ body {
   overflow: hidden;
 }
 
-/* Sidebar */
+/* ===== SIDEBAR ===== */
 .sidebar {
   background: #5a3bdb;
   color: white;
@@ -33,12 +35,13 @@ body {
   margin: 20px 0;
 }
 
-/* Main */
+/* ===== MAIN CONTENT ===== */
 .main {
   padding: 20px;
   background: #f8f9ff;
 }
 
+/* ===== PROFILE CARD ===== */
 .profile-card {
   text-align: center;
   background: white;
@@ -47,7 +50,8 @@ body {
 }
 
 .profile-card img {
-  width: 100px;
+  width: 100px; /* Keep original size */
+  height: 100px;
   border-radius: 50%;
   margin-bottom: 10px;
 }
@@ -62,7 +66,7 @@ body {
   cursor: pointer;
 }
 
-/* Stats */
+/* ===== STATS ===== */
 .stats {
   margin-top: 20px;
   background: white;
@@ -86,7 +90,7 @@ body {
 .orange div { background: orange; }
 .red div { background: red; }
 
-/* Resume */
+/* ===== RESUME ===== */
 .resume {
   padding: 30px;
 }
@@ -108,19 +112,61 @@ body {
     font-family: "Times New Roman", serif;
 }
 
+/* ===== TABLE ===== */
 .educationtable { 
-      font-family: "Times New Roman", serif;
+  font-family: "Times New Roman", serif;
   border-collapse: collapse;
-  width:auto;
+  width: 100%; /* keep original width */
 }
 
 .tabledata {
    font-family: "Times New Roman", serif;
    border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+   text-align: left;
+   padding: 8px;
 }
 
 .tablerow:nth-child(even) {
   background-color: #dddddd;
 }
+
+/* ===== RESPONSIVE MEDIA QUERIES ===== */
+
+/* Mobile screens only (<=768px) */
+
+  /* Table scrollable if mobile width too small */
+  /* ===== RESPONSIVE MEDIA QUERIES ===== */
+
+/* Mobile screens only (<=768px) */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr; /* stack everything */
+    height: auto; /* let content grow */
+  }
+
+  /* Hide sidebar completely on mobile */
+  .sidebar {
+    display: none;
+  }
+
+  .main, .resume {
+    padding: 15px;
+  }
+
+  .buttons button {
+    width: 100%; /* full-width buttons on mobile */
+  }
+
+  /* Keep photo same size on mobile */
+  .profile-card img {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* Make table scrollable if mobile width too small */
+  .educationtable {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
