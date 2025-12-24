@@ -51,10 +51,32 @@ body {
 
 .profile-card img {
   width: 100px; /* Keep original size */
-  height: 100px;
+  height: 125px;
   border-radius: 50%;
   margin-bottom: 10px;
 }
+.fullsize {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  cursor: zoom-out;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fullsize img {
+  width: auto;
+  height: 90vh;       /* desktop: almost full height */
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+
 
 .buttons button {
   margin: 5px;
@@ -129,21 +151,54 @@ body {
 .tablerow:nth-child(even) {
   background-color: #dddddd;
 }
+.icon-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
 
-.icon-button {
-    font-size: 35px;
-    color: #5a3bdb;
-    cursor: pointer;
-    margin: 0 10px;
-    transition: transform 0.2s, color 0.3s;
-  }
-  
-  .icon-button:hover { transform: scale(1.2); }
-  .icon-button.email { color: #FF5733; }
-  .icon-button.instagram { color: #E1306C; }
-  .icon-button.share { color: #1DA1F2; }
-  .icon-button.download { color: #28a745; }
+.icon-row a {
+  text-decoration: none;
+}
 
+.icon {
+  width: 52px;             /* circle size */
+  height: 52px;
+  display: flex;            /* flex for centering */
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;          /* icon size */
+  border-radius: 50%;       /* circle */
+  background-color: #fff;   /* optional background */
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  line-height: 1;           /* fix vertical centering */
+}
+
+/* Brand colors */
+.icon.share { color: #1DA1F2; }       /* Twitter/Share */
+.icon.email { color: #EA4335; }       /* Gmail red */
+.icon.call { color: #34A853; }        /* Phone green */
+.icon.instagram { color: #E1306C; }   /* Instagram pink */
+
+/* Hover effect — only scale + shadow, no color change */
+.icon:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 10px white(247, 246, 246, 0.15);
+  color: auto;            /* important: do not override brand color */
+  background-color: #fff;    /* keeps background white */
+}
+
+.skills-list {
+  padding-left: 15px;   /* space before bullets */
+  margin-top: 10px;
+}
+
+.skills-list li {
+  padding-left: 6px;    /* space between bullet and text */
+  margin-bottom: 4px;
+}
 /* ===== RESPONSIVE MEDIA QUERIES ===== */
 
 /* Mobile screens only (<=768px) */
@@ -183,17 +238,52 @@ body {
     overflow-x: auto;
   }
 
-  .icon-button {
-    font-size: 28px;
-    color: #5a3bdb;
-    cursor: pointer;
-    margin: 0 10px;
-    transition: transform 0.2s, color 0.3s;
-  }
+  .icon-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
 
-  .icon-button:hover { transform: scale(1.2); }
-  .icon-button.email { color: #FF5733; }
-  .icon-button.instagram { color: #E1306C; }
-  .icon-button.share { color: #1DA1F2; }
-  .icon-button.download { color: #28a745; }
+.icon-row a {
+  text-decoration: none;
+}
+
+.icon {
+  width: 52px;             /* circle size */
+  height: 52px;
+  display: flex;            /* flex for centering */
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;          /* icon size */
+  border-radius: 50%;       /* circle */
+  background-color: #fff;   /* optional background */
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  line-height: 1;           /* fix vertical centering */
+}
+
+/* Brand colors */
+.icon.share { color: #1DA1F2; }       /* Twitter/Share */
+.icon.email { color: #EA4335; }       /* Gmail red */
+.icon.call { color: #34A853; }        /* Phone green */
+.icon.instagram { color: #E1306C; }   /* Instagram pink */
+
+/* Hover effect — only scale + shadow, no color change */
+.icon:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 10px white(247, 246, 246, 0.15);
+  color: auto;            /* important: do not override brand color */
+  background-color: #fff;    /* keeps background white */
+}
+
+
+ .skills-list {
+  padding-left: 15px;   /* space before bullets */
+  margin-top: 10px;
+}
+
+.skills-list li {
+  padding-left: 6px;    /* space between bullet and text */
+  margin-bottom: 6px;
 }
